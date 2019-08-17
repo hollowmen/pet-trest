@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <title>API testing for retrieving animal pictures</title>
+
+  <!-- Styling -->
+  <style>
+    #btns {
+      text-align: center;
+    }
+
+    button {
+      margin-bottom: 2em;
+      padding: 1em;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="btns">
+    <button id="getUserData">Get user data</button>
+    </br>
+    <div id="response"></div>
+  </div>
+
+  <!-- Cat -->
+  <div id="cat-id"></div>
+  <div id="cat-url"></div>
+  <div id="cat-image"></div>
+
+  <!-- Dog -->
+  <div id="dog-id"></div>
+  <div id="dog-url"></div>
+  <div id="dog-image"></div>
+
+  <!-- <img src="https://cataas.com/cat">
+  <img src="https://dog.ceo/api/breeds/image/random" alt=""> -->
+
+  <span id="dogPic"></span>
+
+
+  <script>
+    // $('#btn').click(function(){
+    //   // $.ajax({
+    //   //   method: "GET",
+    //   //   url: "https://dog.ceo/api/breeds/image/random",
+    //   //   dataType: 'json'
+    //   // })
+    //   $.getJSON("https://dog.ceo/api/breeds/image/random")
+    //   .done(addDog)
+    //   .fail(function(){
+    //     console.log("Dog fetch failed!");
+    //   })
+    // })
+
+    // function addDog(data){
+    //   // console.log(data.message);
+    //   $("#dogImg").attr("src", data.message);
+    // }
+
+
+    // /*
+    //   JSON Generator info
+
+    //   [
+    //   '{{repeat(5,7)}}',
+    //   {
+    //     _id: '{{objectId()}}',
+    //     name: '{{firstName()}}',
+    //     age: '{{integer(1, 15)}}'
+    //   }
+    // ]
+    // */
+
+
+  </script>
+
+  <script src="test.js"></script>
+</body>
+</html>
