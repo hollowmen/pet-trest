@@ -9,7 +9,7 @@ img {
 }
 
 .grid {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 }
 
@@ -23,23 +23,22 @@ img {
 }
 
 .grid-item {
-	display: flex;
 	height: 300px;
 	margin-bottom: 20px;
 }
 
 .grid-item--height2 {
-	height: 400px;
+	height: 500px;
 }
 
 .grid-item--height3 {
-	height:500px;
+	height: 600px;
 }
 
 .grid-item--width2 {
 	width: 32%;
 }
 
-.grid-tem--width3 {
+.grid-item--width3 {
 	width: 49%;
 }
