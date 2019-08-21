@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+img {
+	object-fit: cover;
+	border: 3px solid black;
+	border-radius: 10px;
+}
+
+.grid {
+	width: 90%;
+	margin: auto;
+}
+
+.gutter-sizer {
+	width: 2%;
+}
+
+.grid-sizer,
+.grid-item {
+	width: 15%;
+}
+
+.grid-item {
+	display: flex;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.grid-item--height2 {
+	height: 400px;
+}
+
+.grid-item--height3 {
+	height:500px;
+}
+
+.grid-item--width2 {
+	width: 32%;
+}
+
+.grid-tem--width3 {
+	width: 49%;
+}
