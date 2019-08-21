@@ -1,0 +1,97 @@
+/*
+Colors
+  --ptBlue1: "00dffc";
+  --ptBlue2: "008C9E";
+  --ptBlue3: "005F6b";
+  --ptGrey: "343838";
+*/
+
+* {
+  overflow: hidden;
+}
+
+/* Background video with filter */
+
+video {
+  position: absolute;
+  top: 0;
+  filter: blur(5px);
+}
+
+/* All content on forground */
+.aboveVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ptHeading {
+  font-size: 5rem;
+  color: #00dffc;
+  z-index: 15;
+  background: #343838;
+  padding: 1.5rem 2.3rem 1.4rem 2rem;
+  border-radius: 5px;
+  margin-bottom: .5em;
+  -webkit-box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+  box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+}
+
+h2 {
+  background: #343838;
+  padding: .5rem;
+  margin: 0;
+  color: #fff;
+}
+
+/* Enter button */
+
+a.button {
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  font-weight: normal;
+  padding: 10px;
+  width: auto;
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  color: rgba(0,223,252,.6);
+  text-decoration: none;
+  margin-left: 10px;
+  background: rgba(255,255,255,0);
+  letter-spacing: 1px;
+  -webkit-transition: all 300ms;
+  float: left;
+}
+
+a.button:hover {
+  background: rgba(52,56,56,.5);
+  color: #00dffc;
+  border-color: rgba(0,0,0,1);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0), 0 1px 1px rgba(0,0,0,.2);
+  font-weight: normal;
+  letter-spacing: 2px;
+  -webkit-box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+  box-shadow: 6px 10px 16px 3px rgba(0,0,0,0.75);
+}
+
+a.button:active {
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+}
