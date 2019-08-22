@@ -2,7 +2,7 @@
 
 //New masonry object and options
 var msnry = new Masonry('.grid', {
-    percentPosition: true,
+    // percentPosition: true,
     columnWidth: '.grid-sizer',
     itemSelector: '.grid-item',
     gutter: '.gutter-sizer',
@@ -40,11 +40,10 @@ function generateElements() {
             //set modal text to text of object
             document.getElementById('modal-text').innerHTML = "";
             document.getElementById('modal-text').innerHTML
-                += "<p>Name: " + pets[num].name.first + " " + pets[num].name.last + "</p>"
-                + "<p>Gender: " + pets[num].gender + "</p>"
+                = "<p>Name: " + capitalize(pets[num].name.first) + " " + capitalize(pets[num].name.last) + "</p>"
+                + "<p>Gender: " + capitalize(pets[num].gender) + "</p>"
                 + "<p>Email: " + pets[num].email + "</p>"
-                + "<p>Address: " + pets[num].location.street + ", " + pets[num].location.city + ", " + pets[num].location.state + " " + pets[num].location.postcode
-                + "</p>";
+                + "<p>Address: " + capitalize(pets[num].location.street) + ", " + capitalize(pets[num].location.city) + ", " + capitalize(pets[num].location.state) + " " + pets[num].location.postcode + "</p>";
 
             openModal();
         });
@@ -56,7 +55,7 @@ function generateElements() {
 
 //Get random user data
 $.ajax({
-    url: 'https://randomuser.me/api/?results=20&exc=login,cell,timezone,picture,registered,id',
+    url: 'https://randomuser.me/api/?results=20&nat=us&exc=login,cell,timezone,picture,registered,id',
     dataType: 'json',
     success: function (data) {
         //Assign random JSON to pets array
@@ -117,7 +116,7 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 function openModal() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 span.onclick = function () {
@@ -129,3 +128,18 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
+//function that capitalizes the first letter of every word in a string
+function capitalize(str) {
+    var arr = str.split(" ");
+    var newArr = [];
+
+    arr.forEach(function (element) {
+        var word = element.split("");
+        word[0] = word[0].toUpperCase();
+
+        newArr.push(word.join(""));
+    });
+
+    return newArr.join(" ");
+}
