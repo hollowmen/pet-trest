@@ -21,6 +21,7 @@ body {
 
 nav {
 	background-color: #005F6b !important;
+	height: 70px !important;
 }
 
 .nav-wrapper > a {
@@ -32,10 +33,24 @@ nav {
 	transition: all .5s;
 }
 
+li {
+	margin: 0 1rem;
+}
 
+a > i {
+	font-size: 1.2rem !important;
+}
+
+a > i:hover {
+	color: #00dffc;
+	transition: all .2s;
+}
+
+
+/* Page items */
 
 .container {
-  background-color: #e4e7ec;
+  background-color: #a3a1a1;
   padding: 0 2rem;
 }
 
@@ -43,6 +58,10 @@ img {
 	object-fit: cover;
 	border: 2px solid black;
 	border-radius: 2px;
+}
+
+#grid-container {
+	padding-top: 2em;
 }
 
 .grid {
