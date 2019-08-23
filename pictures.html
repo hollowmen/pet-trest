@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<title>Pet-trest - A Pinterest clone for pets!</title>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class="navbar"></div>
+		<!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Pet-trest a pinterest clone for pets">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="pinterest pets cats dogs">
+		<meta name="author" content="Yael Brown">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/pictures.css">
 
+		<!-- Google Fonts: Pacifico, Roboto -->
+		<link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<!-- Font Awesome -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
+		<!-- Material CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+		<title>Pet-trest - A Pinterest clone for pets!</title>		
+	</head>
+
+	<body>
+		<!-- navbar -->
+		<nav>
+			<div class="container">
+				<div class="nav-wrapper">
+					<a href="#" class="brand-logo center pacifico-font p-logo">P</a>
+					<ul id="nav-mobile" class="left hide-on-med-and-down">
+						<li><a href="#"><i class="fas fa-paw"></i></a></li>
+						<li><a href="#"><i class="fas fa-cat"></i></a></li>
+						<li><a href="#"><i class="fas fa-dog"></i></a></li>
+					</ul>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="#"><i class="fas fa-search"></i></a></li>
+						<li><a href="#"><i class="fas fa-file-upload"></i></a></li>
+						<li><a href="#"><i class="fas fa-user-alt"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+						
+
+		<!-- Modal -->
 		<div class="modal" id="myModal">
 			<div class="modal-content">
 				<div class="modal-header"><span class="close">&times;</span></div>
@@ -17,16 +57,25 @@
 					<div class="modal-text" id="modal-text"></div>
 				</div>
 				<div class="modal-footer"></div>
+			</div> <!-- modal content-->
+		</div> <!-- modal -->
+
+		<!-- Grid section of page -->
+		<div id="grid-container" class="container">
+			<div class="grid" id="grid">
+				<div class="grid-sizer"></div>
+				<div class="gutter-sizer"></div>
 			</div>
 		</div>
-
-		<div class="grid" id="grid">
-			<div class="grid-sizer"></div>
-			<div class="gutter-sizer"></div>
-		</div>
-
+		
+		<!-- Required scripts-->
+		<!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Masonry -->
 		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<!-- jquery -->
 		<script crossorigin="anonymous" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<!-- Pet-trest app -->
 		<script src="js/pet-trest.js"></script>
 	</body>
 </html>

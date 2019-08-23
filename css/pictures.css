@@ -1,0 +1,191 @@
+/*
+Colors
+  --ptBlue1: "00dffc";
+  --ptBlue2: "008C9E";
+  --ptBlue3: "005F6b";
+	--ptGrey: "343838";
+
+Shadow 
+	-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.75);
+*/
+
+/* Pictures page */
+
+body {
+  background-color: #343838;
+}
+
+/* Navbar */
+
+nav {
+	background-color: #005F6b !important;
+	height: 70px !important;
+}
+
+.nav-wrapper > a {
+	padding: 1rem;
+}
+
+.nav-wrapper > a:hover {
+	color: #00dffc;
+	transition: all .5s;
+}
+
+li {
+	margin: 0 1rem;
+}
+
+a > i {
+	font-size: 1.2rem !important;
+}
+
+a > i:hover {
+	color: #00dffc;
+	transition: all .2s;
+}
+
+
+/* Page items */
+
+.container {
+  background-color: #a3a1a1;
+  padding: 0 2rem;
+}
+
+img {
+	object-fit: cover;
+	border: 2px solid black;
+	border-radius: 2px;
+}
+
+#grid-container {
+	padding-top: 2em;
+}
+
+.grid {
+	width: 100%;
+	margin: auto;
+}
+
+.gutter-sizer {
+	width: 2%;
+}
+
+.grid-sizer,
+.grid-item {
+	width: 15%;
+}
+
+.grid-item {
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.grid-item--height2 {
+	height: 500px;
+}
+
+.grid-item--height3 {
+	height: 600px;
+}
+
+.grid-item--width2 {
+	width: 32%;
+}
+
+.grid-item--width3 {
+	width: 49%;
+}
+
+/* The Modal (background) */
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+	background-color: #fefefe;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	position: relative;
+	margin: auto;
+	padding: 0;
+	height: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+/* The Close Button */
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: #5cb85c;
+	color: white;
+	height: 10%;
+}
+
+.modal-body {
+	display: flex;
+	padding: 2px 16px;
+	height: 80%;
+}
+
+.modal-footer {
+	padding: 2px 16px;
+	background-color: #5cb85c;
+	color: white;
+	height: 10%;
+}
+
+.modal-picture {
+	width: 50%;
+	height: 100%;
+}
+
+.modal-text {
+	padding: 2em;
+	width: 50%;
+}
+
+/*Modal animation*/
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0
+	}
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+
