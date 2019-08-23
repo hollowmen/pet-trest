@@ -36,14 +36,9 @@ function generateElements() {
                 }
             }
             //set modal picture to picture of object
-            document.getElementById('modal-picture').innerHTML = "<img height='100%' width='100%' src=" + pets[num].picture + ">";
+            $('#modal-picture').html("<img height='100%' width='100%' src=" + pets[num].picture + ">");
             //set modal text to text of object
-            document.getElementById('modal-text').innerHTML = "";
-            document.getElementById('modal-text').innerHTML
-                = "<p>Name: " + capitalize(pets[num].name.first) + " " + capitalize(pets[num].name.last) + "</p>"
-                + "<p>Gender: " + capitalize(pets[num].gender) + "</p>"
-                + "<p>Email: " + pets[num].email + "</p>"
-                + "<p>Address: " + capitalize(pets[num].location.street) + ", " + capitalize(pets[num].location.city) + ", " + capitalize(pets[num].location.state) + " " + pets[num].location.postcode + "</p>";
+            $('#modal-text').html(getElementInfo(pets[num]));
 
             openModal();
         });
@@ -53,32 +48,36 @@ function generateElements() {
     msnry.appended(elems);
 }
 
+// Returns html string of all the elements properties
+function getElementInfo(element) {
+    return "<p>Name: " + capitalize(element.name.first) + " " + capitalize(element.name.last) + "</p>"
+        + "<p>Gender: " + capitalize(element.gender) + "</p>"
+        + "<p>Email: " + element.email + "</p>"
+        + "<p>Address: " + capitalize(element.location.street) + ", " + capitalize(element.location.city) + ", " + capitalize(element.location.state) + " " + element.location.postcode + "</p>";
+}
+
 //Get random user data
-$.ajax({
-    url: 'https://randomuser.me/api/?results=20&nat=us&exc=login,cell,timezone,picture,registered,id',
-    dataType: 'json',
-    success: function (data) {
-        //Assign random JSON to pets array
-        var length = data.results.length;
-        for (var i = 0; i < length; i++) {
-            pets.push(data.results[i]);
-        }
-        //Get dog pictures
-        $.get("https://dog.ceo/api/breeds/image/random/10").done(function (data) {
-            //Assign dog pictures to pets
-            for (var i = 0; i < data.message.length; i++) {
-                pets[i].picture = data.message[i];
-            }
-            //Assign cat pictures to pets
-            for (var i = data.message.length; i < length; i++) {
-                pets[i].picture = getCatUrl();
-            }
-            //Shuffle Array
-            shuffleArray(pets);
-            //Assign array to elements on page
-            generateElements();
-        });
+$.get('https://randomuser.me/api/?results=20&nat=us&exc=login,cell,timezone,picture,registered,id').done(function (data) {
+    //Assign random JSON to pets array
+    var length = data.results.length;
+    for (var i = 0; i < length; i++) {
+        pets.push(data.results[i]);
     }
+    //Get dog pictures
+    $.get("https://dog.ceo/api/breeds/image/random/10").done(function (data) {
+        //Assign dog pictures to pets
+        for (var i = 0; i < data.message.length; i++) {
+            pets[i].picture = data.message[i];
+        }
+        //Assign cat pictures to pets
+        for (var i = data.message.length; i < length; i++) {
+            pets[i].picture = getCatUrl();
+        }
+        //Shuffle Array
+        shuffleArray(pets);
+        //Assign array to elements on page
+        generateElements();
+    });
 });
 
 //Return a random url of a cat picture
@@ -124,7 +123,7 @@ span.onclick = function () {
 };
 
 window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
         modal.style.display = "none";
     }
 };
