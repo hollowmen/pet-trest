@@ -6,6 +6,7 @@ Colors
   --ptGrey: "343838";
 */
 
+
 /* Variables */
 
 :root {
@@ -29,6 +30,54 @@ Colors
 
 * {
   box-sizing: border-box;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 50%; /* Could be more or less, depending on screen size */
+	position: relative;
+	margin: auto;
+	padding: 0;
+	height: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 2px 16px;
+	color: white;
+	height: 5%;
+}
+
+.modal-body {
+	display: flex;
+	padding: 2px 16px;
+	height: 90%;
+}
+
+.modal-footer {
+	padding: 2px 16px;
+	color: white;
+	height: 5%;
 }
 
 main, html, body {
