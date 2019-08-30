@@ -12,15 +12,60 @@ var pets = [];
 var elems = [];
 var fragment = document.createDocumentFragment();
 
+// define cats and dogs array (for sorting)
+var cats = [];
+var dogs = [];
+
+setTimeout(function() {
+    cats = showOnlyCats(pets); // saves animals that are cats into array
+    dogs = showOnlyDogs(pets); // saves animals that are dogs into array
+    console.log("added cats and dogs to arrays");
+}, 3000);
+
 //Generate div elements and assign them the correct picture
 //Then add them to the masonry object so they can be displayed
-function generateElements(pets) {
-    for (var i = 0; i < pets.length; i++) {
+// function generateElements(pets) {
+//     for (var i = 0; i < pets.length; i++) {
+//         //Create a new element
+//         var elem = getItemElement();
+
+//         //Add picture to element
+//         elem.innerHTML += "<img height='100%' width='100%' src=" + pets[i].picture + ">";
+
+//         //add element to fragment and element collection
+//         fragment.appendChild(elem);
+//         elems.push(elem);
+
+//         //Add listener to each element
+//         elems[i].addEventListener('click', function () {
+//             var num = 0;
+//             //Find the object that was clicked on
+//             for (var j = 0; j < pets.length; j++) {
+//                 if (this.innerHTML.indexOf(pets[j].picture) !== -1) {
+//                     num = j;
+//                 }
+//             }
+//             //set modal picture to picture of object
+//             $('#modal-picture').html("<img height='100%' width='100%' src=" + pets[num].picture + ">");
+//             //set modal text to text of object
+//             $('#modal-text').html(getElementInfo(pets[num]));
+
+//             openModal();
+//         });
+//     }
+//     //adds elements to grid and masonry object
+//     grid.appendChild(fragment);
+//     msnry.appended(elems);
+// }
+
+
+function generateElements(ani) {
+    for (var i = 0; i < ani.length; i++) {
         //Create a new element
         var elem = getItemElement();
 
         //Add picture to element
-        elem.innerHTML += "<img height='100%' width='100%' src=" + pets[i].picture + ">";
+        elem.innerHTML += "<img height='100%' width='100%' src=" + ani[i].picture + ">";
 
         //add element to fragment and element collection
         fragment.appendChild(elem);
@@ -30,19 +75,22 @@ function generateElements(pets) {
         elems[i].addEventListener('click', function () {
             var num = 0;
             //Find the object that was clicked on
-            for (var j = 0; j < pets.length; j++) {
-                if (this.innerHTML.indexOf(pets[j].picture) !== -1) {
+            for (var j = 0; j < ani.length; j++) {
+                if (this.innerHTML.indexOf(ani[j].picture) !== -1) {
                     num = j;
                 }
             }
             //set modal picture to picture of object
-            $('#modal-picture').html("<img height='100%' width='100%' src=" + pets[num].picture + ">");
+            $('#modal-picture').html("<img height='100%' width='100%' src=" + ani[num].picture + ">");
             //set modal text to text of object
-            $('#modal-text').html(getElementInfo(pets[num]));
+            $('#modal-text').html(getElementInfo(ani[num]));
 
             openModal();
         });
     }
+
+    console.log(elems);
+
     //adds elements to grid and masonry object
     grid.appendChild(fragment);
     msnry.appended(elems);
@@ -174,13 +222,3 @@ function showOnlyDogs(pets) {
 
 // Call functions
 getPetData();    // loads pet data
-
-// define cats and dogs array (for sorting)
-var cats = [];
-var dogs = [];
-
-setTimeout(function() {
-    var cats = showOnlyCats(pets); // saves animals that are cats into array
-    var dogs = showOnlyDogs(pets); // saves animals that are dogs into array
-    console.log("added cats and dogs to arrays");
-}, 3000);
