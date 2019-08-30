@@ -14,7 +14,7 @@ var fragment = document.createDocumentFragment();
 
 //Generate div elements and assign them the correct picture
 //Then add them to the masonry object so they can be displayed
-function generateElements() {
+function generateElements(pets) {
     for (var i = 0; i < pets.length; i++) {
         //Create a new element
         var elem = getItemElement();
@@ -56,29 +56,33 @@ function getElementInfo(element) {
         + "<p>Address: " + capitalize(element.location.street) + ", " + capitalize(element.location.city) + ", " + capitalize(element.location.state) + " " + element.location.postcode + "</p>";
 }
 
-//Get random user data
-$.get('https://randomuser.me/api/?results=20&nat=us&exc=login,cell,timezone,picture,registered,id').done(function (data) {
-    //Assign random JSON to pets array
-    var length = data.results.length;
-    for (var i = 0; i < length; i++) {
-        pets.push(data.results[i]);
-    }
-    //Get dog pictures
-    $.get("https://dog.ceo/api/breeds/image/random/10").done(function (data) {
-        //Assign dog pictures to pets
-        for (var i = 0; i < data.message.length; i++) {
-            pets[i].picture = data.message[i];
+function getPetData() {
+    //Get random user data
+    $.get('https://randomuser.me/api/?results=20&nat=us&exc=login,cell,timezone,picture,registered,id').done(function (data) {
+        //Assign random JSON to pets array
+        var length = data.results.length;
+        for (var i = 0; i < length; i++) {
+            pets.push(data.results[i]);
         }
-        //Assign cat pictures to pets
-        for (var i = data.message.length; i < length; i++) {
-            pets[i].picture = getCatUrl();
-        }
-        //Shuffle Array
-        shuffleArray(pets);
-        //Assign array to elements on page
-        generateElements();
+        //Get dog pictures
+        $.get("https://dog.ceo/api/breeds/image/random/10").done(function (data) {
+            //Assign dog pictures to pets
+            for (var i = 0; i < data.message.length; i++) {
+                pets[i].picture = data.message[i];
+                pets[i].animal = "dog";
+            }
+            //Assign cat pictures to pets
+            for (var i = data.message.length; i < length; i++) {
+                pets[i].picture = getCatUrl();
+                pets[i].animal = "cat";
+            }
+            //Shuffle Array
+            shuffleArray(pets);
+            //Assign array to elements on page
+            generateElements(pets);
+        });
     });
-});
+};
 
 //Return a random url of a cat picture
 function getCatUrl() {
@@ -142,3 +146,41 @@ function capitalize(str) {
 
     return newArr.join(" ");
 }
+
+// Returns array of cats
+function showOnlyCats(pets) {
+    var temp = [];
+    pets.forEach(function(e,i) {
+        if (e.animal === "cat") {
+            // console.log(e);
+            temp.push(e);
+        }
+    })
+    return temp;
+}
+
+// Returns array of dogs
+function showOnlyDogs(pets) {
+    var temp = [];
+    pets.forEach(function(e,i) {
+        if (e.animal === "dog") {
+            // console.log(e);
+            temp.push(e);
+        }
+    })
+    return temp;
+}
+
+
+// Call functions
+getPetData();    // loads pet data
+
+// define cats and dogs array (for sorting)
+var cats = [];
+var dogs = [];
+
+setTimeout(function() {
+    var cats = showOnlyCats(pets); // saves animals that are cats into array
+    var dogs = showOnlyDogs(pets); // saves animals that are dogs into array
+    console.log("added cats and dogs to arrays");
+}, 3000);
