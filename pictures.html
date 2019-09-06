@@ -36,9 +36,9 @@
 				<div class="nav-wrapper">
 					<a href="index.html" class="brand-logo center pacifico-font p-logo">P</a>
 					<ul id="nav-mobile" class="left hide-on-med-and-down">
-						<li><a href="javascript:window.location.href=window.location.href"><i class="fas fa-paw"></i></a></li>
-						<li><a href="#" onclick="generateElements(cats);"><i class="fas fa-cat"></i></a></li>
-						<li><a href="#" onclick="generateElements(dogs);"><i class="fas fa-dog"></i></a></li>
+						<li><a href="#" onclick="showOnPage(animals);"><i class="fas fa-paw"></i></a></li>
+						<li><a href="#" onclick="showOnPage(cats);"><i class="fas fa-cat"></i></a></li>
+						<li><a href="#" onclick="showOnPage(dogs);"><i class="fas fa-dog"></i></a></li>
 					</ul>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 						<li><a href="#"><i class="fas fa-search"></i></a></li>
@@ -50,41 +50,26 @@
 		</nav>
 
 
-		<!-- Modal -->
-		<div class="modal" id="myModal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="modal-header-empty"> </span>
-					<span class="pacifico-font modal-P">P</span>
-					<span class="close">&times;</span>
-				</div>
-				<div class="modal-body">
-					<div class="modal-picture" id="modal-picture"></div>
-					<div class="modal-text" id="modal-text"></div>
-				</div>
-				<div class="modal-footer"></div>
-			</div> <!-- modal content-->
-		</div> <!-- modal -->
-
 		<!-- Grid section of page -->
 		<div id="grid-container" class="container">
 			<div class="grid" id="grid">
-				<div class="grid-sizer"></div>
-				<div class="gutter-sizer"></div>
 			</div>
 		</div>
+
+		<!-- animal spinner -->
+		<div id="spinner"><img src="./img/puppySpinner.svg" alt="" srcset=""></div>
 
 		<!-- Required scripts-->
 		<!-- Materialize -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- Masonry -->
-		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<!-- Isotope -->
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
 		<!-- jquery -->
 		<script crossorigin="anonymous" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 		<!-- Pet-trest app -->
-		<script src="js/pet-trest.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
