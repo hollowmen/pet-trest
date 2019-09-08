@@ -40,6 +40,18 @@ nav {
 	transition: all .5s;
 }
 
+.input-field {
+	display: inline-block;
+	width: 0px;
+	color: #fff;
+}
+
+.input-field > input {
+	color: #fff;
+	margin-bottom: 0em;
+	margin-left: .5em !important;
+}
+
 li {
 	margin: 0 1rem;
 }
@@ -126,7 +138,7 @@ img {
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
+	z-index: 2; /* Sit on top */
 	left: 0;
 	top: 0;
 	margin-top: 10% !important;
@@ -136,6 +148,19 @@ img {
 	background-color: rgb(0, 0, 0); /* Fallback color */
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 	max-height: 100vh;
+}
+
+.modal-bg {
+	visibility: hidden;
+	opacity: 0;
+	width: 100vw !important;
+	height: 100vw !important;
+	background: #000;
+	opacity: .5;
+	z-index: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 
 /* Modal Content/Box */
@@ -150,7 +175,7 @@ img {
 .modal-content {
 	background-color: #fefefe;
 	border: 1px solid #888;
-	width: auto; 
+	width: auto;
 	position: relative;
 	margin: auto;
 	padding: 0;
