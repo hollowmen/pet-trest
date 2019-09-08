@@ -6,6 +6,6 @@ CodeUp pod project that uses ajax get requests to populate a page with cats and 
 
 By: 
 - Yael Brown
-- Kevin Arnold
+- Kevin Arnall
 
 [Yael Brown's 101-exercises](https://global-tricorne.glitch.me/)
